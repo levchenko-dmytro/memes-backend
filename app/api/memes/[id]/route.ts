@@ -20,7 +20,7 @@ export async function PUT(req: Request, { params }: PramsInter) {
 
   memes[index] = { ...memes[index], ...body };
 
-  const filePath = path.resolve("./memes.json");
+  const filePath = path.resolve("./storage/memes.json");
   fs.writeFileSync(filePath, JSON.stringify(memes, null, 2));
   return NextResponse.json(memes[index]);
 }
